@@ -57,7 +57,7 @@ const posts = [
 ];
 
 const postContainer = document.querySelector('.posts-list');
-console.log(postContainer);//DEBUG
+
 
 //ciclo for che cicla sull'array "posts"
 for (let i = 0; i < posts.length; i++){
@@ -95,6 +95,19 @@ for (let i = 0; i < posts.length; i++){
     </div>            
 </div>`
 
+    // if (postElement.author.image === null){
+
+    // }
+
+    
+
     postContainer.innerHTML += postItem;
 };
+
+document.querySelector('.js-like-button').addEventListener("click", onclick);
+
+function onclick() {
+    const likeBtn = document.querySelector('.js-like-button');
+    this.classList.add('like-button--liked');
+}
 
