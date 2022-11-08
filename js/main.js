@@ -61,24 +61,24 @@ console.log(postContainer);//DEBUG
 
 //ciclo for che cicla sull'array "posts"
 for (let i = 0; i < posts.length; i++){
-    const totalPosts = posts[i];
-    console.log(totalPosts);//DEBUG
+    const postElement = posts[i];
+    console.log(postElement);//DEBUG
  
     postItem = `<div class="post">
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="${posts.author.image}" alt="Phil Mangione">                    
+                <img class="profile-pic" src="${postElement.author.image}" alt="Phil Mangione">                    
             </div>
             <div class="post-meta__data">
-                <div class="post-meta__author">Phil Mangione</div>
-                <div class="post-meta__time">4 mesi fa</div>
+                <div class="post-meta__author">${postElement.author.name}</div>
+                <div class="post-meta__time">${postElement.created}</div>
             </div>                    
         </div>
     </div>
     <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
     <div class="post__image">
-        <img src="https://unsplash.it/600/300?image=171" alt="">
+        <img src="${postElement.media}" alt="">
     </div>
     <div class="post__footer">
         <div class="likes js-likes">
@@ -89,11 +89,12 @@ for (let i = 0; i < posts.length; i++){
                 </a>
             </div>
             <div class="likes__counter">
-                Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                Piace a <b id="like-counter-1" class="js-likes-counter">${postElement.likes}</b> persone
             </div>
         </div> 
     </div>            
 </div>`
 
     postContainer.innerHTML += postItem;
-}
+};
+
