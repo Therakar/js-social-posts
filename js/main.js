@@ -55,3 +55,10 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+//ciclo for che cicla sull'array "posts"
+for (let i = 0; i < posts.length; i++){
+    const totalPosts = posts[i];
+    console.log(totalPosts);//DEBUG
+}
